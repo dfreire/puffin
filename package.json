@@ -1,15 +1,13 @@
 {
-  "name": "puffin",
-  "version": "0.0.1",
-  "scripts": {
-    "test": "./node_modules/nodeunit/bin/nodeunit $(find ./src -name '*-test.js' -type f)"
-  },
-  "devDependencies": {
-    "nodeunit": "^0.9.1"
-  },
-  "dependencies": {
-    "dot": "^1.0.3",
-    "handlebars": "^4.0.5",
-    "lodash": "^3.10.1"
-  }
+	"name": "puffin",
+	"version": "0.0.1",
+	"scripts": {
+		"test": "./node_modules/nodeunit/bin/nodeunit $(find ./src -name '*-test.js' -type f)"
+	},
+	"devDependencies": {
+		"nodeunit": "^0.9.1"
+	},
+	"dependencies": {
+		"lodash": "^3.10.1"
+	}
 }

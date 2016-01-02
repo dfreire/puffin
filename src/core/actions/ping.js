@@ -1,3 +1,3 @@
 var actions = require('./actions');
 
-actions.publish();
+actions.ping();
