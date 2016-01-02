@@ -1,0 +1,7 @@
+{
+	"home": {
+		"label": "Home Page",
+		"type": "page",
+		"required": true
+	}
+}

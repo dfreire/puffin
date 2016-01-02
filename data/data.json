@@ -1,0 +1,18 @@
+{
+	"site": {
+		"site": {
+			"title": "Puffin",
+			"home": "home"
+		}
+	},
+	"page": {
+		"home": {
+			"title": "Home",
+			"text": {
+				"en_US": "Hello, World!",
+				"pt_PT": "Olá, Mundo!"
+			},
+			"pages": []
+		}
+	}
+}
