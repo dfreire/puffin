@@ -2,7 +2,9 @@
 	"site": {
 		"site": {
 			"title": "Puffin",
-			"home": "home"
+			"home": "home",
+			"defaultLanguage": "en_US",
+			"otherLanguages": ["en_US", "pt_PT"]
 		}
 	},
 	"page": {

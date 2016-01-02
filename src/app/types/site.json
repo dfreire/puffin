@@ -1,7 +1,22 @@
 {
+	"title": {
+		"label": "Title",
+		"type": "text",
+		"required": true
+	},
 	"home": {
 		"label": "Home Page",
 		"type": "page",
 		"required": true
+	},
+	"defaultLanguage": {
+		"label": "Site Language",
+		"type": "string",
+		"required": true
+	},
+	"otherLanguages": {
+		"label": "Other Languages",
+		"type": "list",
+		"listType": "string"
 	}
 }
