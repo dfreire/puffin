@@ -1,6 +1,6 @@
 localhost:9000 {
     gzip
-	root ./admin/
+	root ./admin/public/
     log admin-access.log {
         size 1
         age  7
