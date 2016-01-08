@@ -1,9 +1,16 @@
-localhost:3030 {
+localhost:9000 {
     gzip
-	root ./public
-    templates
-    log caddy-access.log
+	root ./admin/
+    log admin-access.log {
+        size 1
+        age  7
+        keep 1
+    }
     errors {
-        log caddy-error.log
+        log admin-error.log {
+            size 1
+            age  7
+            keep 1
+        }
     }
 }
