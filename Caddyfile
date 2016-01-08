@@ -1,13 +1,30 @@
 localhost:9000 {
     gzip
-	root ./admin/public/
-    log admin-access.log {
+	root ./backend/public/
+    log backend-access.log {
         size 1
         age  7
         keep 1
     }
     errors {
-        log admin-error.log {
+        log backend-error.log {
+            size 1
+            age  7
+            keep 1
+        }
+    }
+}
+
+localhost:3000 {
+    gzip
+	root ./frontend/public/
+    log frontend-access.log {
+        size 1
+        age  7
+        keep 1
+    }
+    errors {
+        log frontend-error.log {
             size 1
             age  7
             keep 1
