@@ -1,0 +1,5 @@
+localhost:3030 {
+    gzip
+    # log caddy.log
+	root ./public
+}
