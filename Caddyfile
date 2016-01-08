@@ -1,5 +1,9 @@
 localhost:3030 {
     gzip
-    # log caddy.log
 	root ./public
+    templates
+    log caddy-access.log
+    errors {
+        log caddy-error.log
+    }
 }
