@@ -2,15 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {Router, Route, Redirect} from "react-router";
 import slug from "slug";
-import Navbar from "./navbar.jsx";
+import Page from "./page.jsx";
 
 const Root = React.createClass({
     render() {
-        console.log(this.props);
         return (
-            <Navbar activeLanguage={this.props.route.activeLanguage}
-                languages={this.props.route.languages}
-                menuItems={this.props.route.menuItems} />
+            <Page route={this.props.route} />
         );
     }
 });
@@ -37,13 +34,25 @@ const Main = React.createClass({
             return (
                 <Router>
                     <Route>
+                        <Redirect from="/" to="/en" />
                         <Route path="/en" component={Root} activeLanguage="en" languages={this.state.languages} menuItems={this.state.menuItems} />
                         <Route path="/pt" component={Root} activeLanguage="pt" languages={this.state.languages} menuItems={this.state.menuItems} />
-                        <Redirect from="/" to="/en" />
+                        {this._renderRoutes()}
                     </Route>
                 </Router>
             );
         }
+    },
+    _renderRoutes() {
+        let routes = [];
+        this.state.menuItems.forEach((item, i) => {
+            this.state.languages.forEach((language, j) => {
+                routes.push(
+                    <Route key={i*j} path={item.path[language]} component={Page} activeLanguage={language} languages={this.state.languages} menuItems={this.state.menuItems} />
+                );
+            });
+        });
+        return routes;
     }
 });
 
