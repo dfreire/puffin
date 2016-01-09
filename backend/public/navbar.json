@@ -1,0 +1,13 @@
+[{
+	"title": {
+		"en": "Dashboard",
+		"pt": "Visão Geral"
+	},
+    "path": "/dashboard"
+},{
+	"title": {
+		"en": "Users",
+		"pt": "Utilizadores"
+	},
+    "path": "/users"
+}]
