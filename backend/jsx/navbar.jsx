@@ -38,7 +38,7 @@ export default React.createClass({
     _renderItems() {
         return this.state.items.map((item) => {
             return (
-                <li><a href={item.path}>{item.title[this.props.lang]}</a></li>
+                <li><a href={item.path[this.props.lang]}>{item.title[this.props.lang]}</a></li>
             );
         });
 

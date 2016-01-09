@@ -3,11 +3,17 @@
 		"en": "Dashboard",
 		"pt": "Visão Geral"
 	},
-    "path": "/dashboard"
-},{
+	"path": {
+		"en": "/dashboard",
+		"pt": "/visao-geral"
+	}
+}, {
 	"title": {
 		"en": "Users",
 		"pt": "Utilizadores"
 	},
-    "path": "/users"
+	"path": {
+		"en": "/users",
+		"pt": "/utilizadores"
+	}
 }]

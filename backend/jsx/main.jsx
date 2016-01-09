@@ -5,7 +5,7 @@ import Navbar from "./navbar.jsx";
 const Root = React.createClass({
     render() {
         return (
-            <Navbar lang="en" />
+            <Navbar lang="pt" />
         );
     }
 });
