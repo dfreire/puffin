@@ -1,0 +1,90 @@
+{
+	"languages": ["en", "pt"],
+	"menuItems": [{
+		"path": "/:language/dashboard"
+	}, {
+		"path": "/:language/pages"
+	}, {
+		"path": "/:language/files"
+	}, {
+		"path": "/:language/users"
+	}, {
+		"path": "/:language/products"
+	}, {
+		"path": "/:language/orders"
+	}, {
+		"path": "/:language/newsletters"
+	}],
+	"routes": {
+		"/:language/dashboard": {
+			"title": {
+				"en": "Dashboard",
+				"pt": "Visão Geral"
+			}
+		},
+		"/:language/pages": {
+			"title": {
+				"en": "Pages",
+				"pt": "Páginas"
+			}
+		},
+		"/:language/files": {
+			"title": {
+				"en": "Files",
+				"pt": "Ficheiros"
+			}
+		},
+		"/:language/users": {
+			"title": {
+				"en": "Users",
+				"pt": "Utilizadores"
+			}
+		},
+		"/:language/users/new": {
+			"title": {
+				"en": "Create New User",
+				"pt": "Criar Novo Utilizador"
+			}
+		},
+		"/:language/users/edit/:id": {
+			"title": {
+				"en": "Edit User",
+				"pt": "Editar Utilizador"
+			}
+		},
+		"/:language/users/remove/:id": {
+			"title": {
+				"en": "Remove User",
+				"pt": "Remover Utilizador"
+			}
+		},
+		"/:language/products": {
+			"title": {
+				"en": "Products",
+				"pt": "Produtos"
+			}
+		},
+		"/:language/orders": {
+			"title": {
+				"en": "Orders",
+				"pt": "Encomendas"
+			}
+		},
+		"/:language/newsletters": {
+			"title": {
+				"en": "Newsletters",
+				"pt": "Newsletters"
+			}
+		},
+		"/:language/settings": {
+			"title": {
+				"en": "Settings",
+				"pt": "Configurações"
+			}
+		}
+	},
+	"redirects": {
+		"/": "/en",
+		"/:language": "/:language/dashboard"
+	}
+}

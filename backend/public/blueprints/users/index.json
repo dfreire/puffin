@@ -1,0 +1,32 @@
+{
+	"type": "table",
+	"showColumnTitles": true,
+	"captionColumnNames": ["email"],
+	"columns": [{
+		"name": "completeName",
+		"type": "text",
+		"title": {
+			"en": "Complete Name",
+			"pt": "Nome Completo"
+		}
+	}, {
+		"name": "email",
+		"type": "text",
+		"title": {
+			"en": "Email",
+			"pt": "Email"
+		}
+	}],
+	"actions": [{
+		"fontawesomeIcon": "pencil",
+		"route": "/:language/users/edit/:id"
+	}, {
+		"fontawesomeIcon": "minus",
+		"route": "/:language/users/remove/:id"
+	}],
+	"bulkSelection": true,
+	"bulkActions": [{
+		"fontawesomeIcon": "minus",
+		"route": "/:language/users/remove/:ids"
+	}]
+}
