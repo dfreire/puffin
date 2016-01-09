@@ -2,11 +2,6 @@ import React from "react";
 import {Link} from "react-router";
 
 export default React.createClass({
-    propTypes: {
-        activeLanguage: React.PropTypes.string.isRequired,
-        languages: React.PropTypes.array.isRequired,
-        menuItems: React.PropTypes.array.isRequired
-    },
     render() {
         return (
             <nav className="navbar navbar-default">
@@ -28,7 +23,7 @@ export default React.createClass({
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
                             <li className="dropdown">
-                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.props.activeLanguage.toUpperCase()} <span className="caret"></span></a>
+                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.props.route.activeLanguage.toUpperCase()} <span className="caret"></span></a>
                                 <ul className="dropdown-menu">
                                     {this._renderLanguages()}
                                 </ul>
@@ -40,14 +35,14 @@ export default React.createClass({
         );
     },
     _renderItems() {
-        return this.props.menuItems.map((item, i) => {
+        return this.props.route.menuItems.map((item, i) => {
             return (
-                <li key={i}><Link to={item.path[this.props.activeLanguage]}>{item.title[this.props.activeLanguage]}</Link></li>
+                <li key={i}><Link to={item.path[this.props.route.activeLanguage]}>{item.title[this.props.route.activeLanguage]}</Link></li>
             );
         });
     },
     _renderLanguages() {
-        return this.props.languages.map((language, i) => {
+        return this.props.route.languages.map((language, i) => {
             return (
                 <li key={i}><Link to={`/${language}`}>{language.toUpperCase()}</Link></li>
             );

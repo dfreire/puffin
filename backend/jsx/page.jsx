@@ -3,11 +3,11 @@ import Navbar from "./navbar.jsx";
 
 export default React.createClass({
     render() {
-        console.log("Page props", this.props);
+        console.log("Page", this.props.route);
         return (
             <div>
-                <Navbar activeLanguage={this.props.route.activeLanguage} languages={this.props.route.languages} menuItems={this.props.route.menuItems} />
-                <h1>Hello</h1>
+                <Navbar route={this.props.route} />
+                <h1>{this.props.route.activePage.title[this.props.route.activeLanguage]}</h1>
             </div>
         );
     }

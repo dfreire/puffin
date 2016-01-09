@@ -34,9 +34,7 @@ const Main = React.createClass({
             return (
                 <Router>
                     <Route>
-                        <Redirect from="/" to="/en" />
-                        <Route path="/en" component={Root} activeLanguage="en" languages={this.state.languages} menuItems={this.state.menuItems} />
-                        <Route path="/pt" component={Root} activeLanguage="pt" languages={this.state.languages} menuItems={this.state.menuItems} />
+                        <Redirect from="/" to={this.state.menuItems[0].path[this.state.languages[0]]} />
                         {this._renderRoutes()}
                     </Route>
                 </Router>
@@ -48,7 +46,7 @@ const Main = React.createClass({
         this.state.menuItems.forEach((item, i) => {
             this.state.languages.forEach((language, j) => {
                 routes.push(
-                    <Route key={i*j} path={item.path[language]} component={Page} activeLanguage={language} languages={this.state.languages} menuItems={this.state.menuItems} />
+                    <Route key={i*j} path={item.path[language]} component={Page} activePage={item} activeLanguage={language} languages={this.state.languages} menuItems={this.state.menuItems} />
                 );
             });
         });
