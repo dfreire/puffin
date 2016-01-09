@@ -4,8 +4,8 @@
 		"pt": "Visão Geral"
 	},
 	"path": {
-		"en": "/dashboard",
-		"pt": "/visao-geral"
+		"en": "/en/dashboard",
+		"pt": "/pt/visao-geral"
 	}
 }, {
 	"title": {
@@ -13,7 +13,7 @@
 		"pt": "Utilizadores"
 	},
 	"path": {
-		"en": "/users",
-		"pt": "/utilizadores"
+		"en": "/en/users",
+		"pt": "/pt/utilizadores"
 	}
 }]

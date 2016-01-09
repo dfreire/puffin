@@ -10,7 +10,4 @@ const Root = React.createClass({
     }
 });
 
-ReactDOM.render(
-  <Root />,
-  document.getElementById("root")
-);
+ReactDOM.render(<Root />, document.getElementById("root"));
