@@ -28,7 +28,7 @@ export default React.createClass({
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
                             <li className="dropdown">
-                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.props.activeLanguage} <span className="caret"></span></a>
+                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.props.activeLanguage.toUpperCase()} <span className="caret"></span></a>
                                 <ul className="dropdown-menu">
                                     {this._renderLanguages()}
                                 </ul>
@@ -42,14 +42,14 @@ export default React.createClass({
     _renderItems() {
         return this.props.menuItems.map((item, i) => {
             return (
-                <li key={i}><a href="#">{item.title[this.props.activeLanguage]}</a></li>
+                <li key={i}><Link to={item.path[this.props.activeLanguage]}>{item.title[this.props.activeLanguage]}</Link></li>
             );
         });
     },
     _renderLanguages() {
         return this.props.languages.map((language, i) => {
             return (
-                <li key={i}><Link to={`/${language}`}>{language}</Link></li>
+                <li key={i}><Link to={`/${language}`}>{language.toUpperCase()}</Link></li>
             );
         });
     }
