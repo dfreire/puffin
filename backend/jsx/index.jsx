@@ -2,6 +2,7 @@ import _ from "lodash";
 import React from "react";
 import ReactDOM from "react-dom";
 import {Router, Route, Redirect, Link} from "react-router";
+import Table from "./components/table.jsx";
 
 const Navbar = React.createClass({
     propTypes: {
@@ -62,6 +63,8 @@ const Navbar = React.createClass({
 
 const Page = React.createClass({
     render() {
+        let url = this.props.route.path.replace(`/${this.props.route.activeLanguage}`, "/blueprints") + ".json";
+        console.log("url", url);
         console.log(this.props.route);
         return (
             <div>
