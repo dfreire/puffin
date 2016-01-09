@@ -1,16 +1,11 @@
 import React from "react";
+import {Link} from "react-router";
 
 export default React.createClass({
-    getInitialState() {
-        return { items: [], languages: [] };
-    },
-    componentDidMount() {
-        $.getJSON("/navbar.json", (data) => {
-            this.setState({items: data});
-        });
-        $.getJSON("/languages.json", (data) => {
-            this.setState({languages: data});
-        });
+    propTypes: {
+        activeLanguage: React.PropTypes.string.isRequired,
+        languages: React.PropTypes.array.isRequired,
+        menuItems: React.PropTypes.array.isRequired
     },
     render() {
         return (
@@ -33,7 +28,7 @@ export default React.createClass({
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
                             <li className="dropdown">
-                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Languages <span className="caret"></span></a>
+                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.props.activeLanguage} <span className="caret"></span></a>
                                 <ul className="dropdown-menu">
                                     {this._renderLanguages()}
                                 </ul>
@@ -45,16 +40,16 @@ export default React.createClass({
         );
     },
     _renderItems() {
-        return this.state.items.map((item, i) => {
+        return this.props.menuItems.map((item, i) => {
             return (
-                <li key={i}><a href={item.path[this.props.lang]}>{item.title[this.props.lang]}</a></li>
+                <li key={i}><a href="#">{item.title[this.props.activeLanguage]}</a></li>
             );
         });
     },
     _renderLanguages() {
-        return this.state.languages.map((language, i) => {
+        return this.props.languages.map((language, i) => {
             return (
-                <li key={i}><a href="#">{language.title[this.props.lang]}</a></li>
+                <li key={i}><Link to={`/${language}`}>{language}</Link></li>
             );
         });
     }

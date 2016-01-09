@@ -1,0 +1,44 @@
+{
+	"languages": ["en", "pt"],
+	"menuItems": [{
+		"title": {
+			"en": "Dashboard",
+			"pt": "Visão Geral"
+		}
+	}, {
+		"title": {
+			"en": "Pages",
+			"pt": "Páginas"
+		}
+	}, {
+		"title": {
+			"en": "Files",
+			"pt": "Ficheiros"
+		}
+	}, {
+		"title": {
+			"en": "Users",
+			"pt": "Utilizadores"
+		}
+	}, {
+		"title": {
+			"en": "Products",
+			"pt": "Produtos"
+		}
+	}, {
+		"title": {
+			"en": "Orders",
+			"pt": "Encomendas"
+		}
+	}, {
+		"title": {
+			"en": "Newsletter",
+			"pt": "Newsletter"
+		}
+	}, {
+		"title": {
+			"en": "Settings",
+			"pt": "Definições"
+		}
+	}]
+}
