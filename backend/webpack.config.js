@@ -1,5 +1,5 @@
 var config = {
-	entry: ['./jsx/main.jsx'],
+	entry: ['./jsx/index.jsx'],
 	output: {
 		filename: './public/bundle.js'
 	},
