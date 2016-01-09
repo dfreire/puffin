@@ -2,11 +2,14 @@ import React from "react";
 
 export default React.createClass({
     getInitialState() {
-        return { items: [] };
+        return { items: [], languages: [] };
     },
     componentDidMount() {
-        $.getJSON("/navbar.json", (items) => {
-            this.setState({items: items});
+        $.getJSON("/navbar.json", (data) => {
+            this.setState({items: data});
+        });
+        $.getJSON("/languages.json", (data) => {
+            this.setState({languages: data});
         });
     },
     render() {
@@ -29,6 +32,12 @@ export default React.createClass({
                             {this._renderItems()}
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
+                            <li className="dropdown">
+                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Languages <span className="caret"></span></a>
+                                <ul className="dropdown-menu">
+                                    {this._renderLanguages()}
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -41,6 +50,12 @@ export default React.createClass({
                 <li key={i}><a href={item.path[this.props.lang]}>{item.title[this.props.lang]}</a></li>
             );
         });
-
+    },
+    _renderLanguages() {
+        return this.state.languages.map((language, i) => {
+            return (
+                <li key={i}><a href="#">{language.title[this.props.lang]}</a></li>
+            );
+        });
     }
 });
