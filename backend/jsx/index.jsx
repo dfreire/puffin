@@ -62,9 +62,24 @@ const Navbar = React.createClass({
 
 
 const Page = React.createClass({
+    getInitialState() {
+        return { blueprint: undefined };
+    },
+    componentDidMount() {
+        this._fetchBlueprint();
+    },
+    componentDidUpdate (prevProps) {
+        if (this.props.route.blueprintURL !== prevProps.route.blueprintURL) {
+            this._fetchBlueprint();
+        }
+    },
+    _fetchBlueprint() {
+        console.log("_fetchBlueprint", this.props.route.blueprintURL);
+        $.getJSON(this.props.route.blueprintURL, (blueprint) => {
+            this.setState({ blueprint: blueprint });
+        });
+    },
     render() {
-        let url = this.props.route.path.replace(`/${this.props.route.activeLanguage}`, "/blueprints") + ".json";
-        console.log("url", url);
         console.log(this.props.route);
         return (
             <div>
@@ -74,10 +89,17 @@ const Page = React.createClass({
                     menuItems={this.props.route.menuItems}
                 />
                 <div className="container">
-                    <h1>{this.props.route.title}</h1>
+                    {this._renderContent()}
                 </div>
             </div>
         );
+    },
+    _renderContent() {
+        if (this.state.blueprint) {
+            return (<div>{JSON.stringify(this.state.blueprint)}</div>);
+        } else {
+            return (<h1>{this.props.route.title}</h1>);
+        }
     }
 });
 
@@ -106,6 +128,7 @@ const Main = React.createClass({
                             <Route key={i} path={route.path} component={Page}
                                 title={route.title}
                                 activeLanguage={route.activeLanguage}
+                                blueprintURL={route.blueprintURL}
                                 languages={this.state.blueprint.languages}
                                 menuItems={this._getMenuItemsForLanguage(route.activeLanguage)}
                             />
@@ -128,7 +151,8 @@ const Main = React.createClass({
                     expanded.push({
                         path: path.replace(/:language/g, language),
                         title: pathProps.title[language],
-                        activeLanguage: language
+                        activeLanguage: language,
+                        blueprintURL: path.replace("/:language", "/blueprints") + "/index.json"
                     });
                 });
             } else {
