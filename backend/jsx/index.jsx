@@ -2,7 +2,7 @@ import _ from "lodash";
 import React from "react";
 import ReactDOM from "react-dom";
 import {Router, Route, Redirect, Link} from "react-router";
-import Table from "./components/table.jsx";
+import List from "./components/list.jsx";
 
 const Navbar = React.createClass({
     propTypes: {
@@ -96,9 +96,12 @@ const Page = React.createClass({
     },
     _renderContent() {
         if (this.state.blueprint) {
-            return (<div>{JSON.stringify(this.state.blueprint)}</div>);
-        } else {
-            return (<h1>{this.props.route.title}</h1>);
+            switch (this.state.blueprint.type) {
+                case "list":
+                    return (<List activeLanguage={this.props.route.activeLanguage} blueprint={this.state.blueprint}></List>);
+                default:
+                    return (<div>{JSON.stringify(this.state.blueprint)}</div>);
+            }
         }
     }
 });

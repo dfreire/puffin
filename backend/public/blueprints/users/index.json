@@ -1,18 +1,19 @@
 {
-	"type": "table",
-	"showColumnTitles": true,
-	"captionColumnNames": ["email"],
-	"columns": [{
+	"type": "list",
+	"display": "table",
+	"showFieldLabels": true,
+	"captionFields": ["email"],
+	"fields": [{
 		"name": "completeName",
 		"type": "text",
-		"title": {
+		"label": {
 			"en": "Complete Name",
 			"pt": "Nome Completo"
 		}
 	}, {
 		"name": "email",
 		"type": "text",
-		"title": {
+		"label": {
 			"en": "Email",
 			"pt": "Email"
 		}

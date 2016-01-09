@@ -1,1 +1,14 @@
-{}
+{
+	"type": "list",
+	"display": "table",
+	"showFieldLabels": true,
+	"captionFields": ["title"],
+	"fields": [{
+		"name": "title",
+		"type": "text",
+		"label": {
+			"en": "Title",
+			"pt": "Título"
+		}
+	}]
+}
