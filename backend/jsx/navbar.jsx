@@ -35,16 +35,22 @@ export default React.createClass({
         );
     },
     _renderItems() {
+        let activePath = this.props.route.activePage.path[this.props.route.activeLanguage];
         return this.props.route.menuItems.map((item, i) => {
+            let to = item.path[this.props.route.activeLanguage];
+            let caption = item.title[this.props.route.activeLanguage];
+            let className = (activePath === to) ? "active" : "";
             return (
-                <li key={i}><Link to={item.path[this.props.route.activeLanguage]}>{item.title[this.props.route.activeLanguage]}</Link></li>
+                <li key={i} className={className}><Link to={to}>{caption}</Link></li>
             );
         });
     },
     _renderLanguages() {
         return this.props.route.languages.map((language, i) => {
+            let to = this.props.route.activePage.path[language];
+            let caption = language.toUpperCase() + " - " + this.props.route.activePage.title[language];
             return (
-                <li key={i}><Link to={`/${language}`}>{language.toUpperCase()}</Link></li>
+                <li key={i}><Link to={to}>{caption}</Link></li>
             );
         });
     }
