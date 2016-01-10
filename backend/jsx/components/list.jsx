@@ -9,8 +9,8 @@ export default React.createClass({
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-md-4">{this._renderFilter()}</div>
-                    <div className="col-md-8">{this._renderTable()}</div>
+                    {/*<div className="col-md-4">{this._renderFilter()}</div>*/}
+                    <div className="col-md-12">{this._renderTable()}</div>
                 </div>
             </div>
         );
@@ -56,6 +56,9 @@ export default React.createClass({
             <div className="panel panel-default">
                 {this._renderHeading()}
                 <div className="panel-body">
+                    <div className="form-group">
+                        <input type="text" className="form-control" />
+                    </div>
                     <table className="table table-striped table-hover">
                         {this._renderHead()}
                         {this._renderBody()}
