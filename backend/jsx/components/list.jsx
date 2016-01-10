@@ -18,7 +18,13 @@ export default React.createClass({
     _renderFilter() {
         return (
             <div className="panel panel-default">
-                {this._renderHeading()}
+                <div className="panel-heading">
+                    <div className="pull-left"><h3 className="panel-title">Filter</h3></div>
+                    <div className="pull-right">
+                        <a href="#">clear</a>
+                    </div>
+                    <div className="clearfix"></div>
+                </div>
                 <div className="panel-body">
                     {this.props.blueprint.fields.map((field, i) => {
                         let label = field.label[this.props.activeLanguage];
@@ -35,12 +41,11 @@ export default React.createClass({
     _renderHeading() {
         return (
             <div className="panel-heading">
-                <div className="pull-left"><b>Users</b></div>
+                <div className="pull-left"><h3 className="panel-title">Users</h3></div>
                 <div className="pull-right">
-                    <a href="#">create</a><span className="text-muted">&nbsp;|&nbsp;</span>
-                    <a href="#">update</a><span className="text-muted">&nbsp;|&nbsp;</span>
-                    <a href="#">remove</a><span className="text-muted">&nbsp;|&nbsp;</span>
-                    <a href="#">clear</a>
+                    <a href="#" style={{paddingLeft: 20}}>create</a>
+                    <a href="#" style={{paddingLeft: 20}}>update</a>
+                    <a href="#" style={{paddingLeft: 20}}>remove</a>
                 </div>
                 <div className="clearfix"></div>
             </div>
@@ -56,7 +61,7 @@ export default React.createClass({
                         {this._renderBody()}
                     </table>
                 </div>
-                <div className="panel-footer">{this._renderPagination()}</div>
+                <div className="panel-footer" style={{paddingTop: 5, paddingBottom: 0}}>{this._renderPagination()}</div>
             </div>
         );
     },
